@@ -11,6 +11,10 @@
 	selectedStyle.update(() => defaultStyle);
 </script>
 
+<svelte:head>
+	<title>Water and Sewerage Map for Narok Water</title>
+</svelte:head>
+
 <Header bind:drawerOpen />
 <DrawerContent bind:open={drawerOpen}>
 	<Map />

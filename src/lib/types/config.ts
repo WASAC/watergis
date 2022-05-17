@@ -1,5 +1,4 @@
 import type { LngLatLike } from 'maplibre-gl';
-import type { Options as ElevationOptions } from '@watergis/maplibre-gl-elevation';
 import type { Contour } from '../valhalla';
 
 export type StyleSwitcherOption = {
@@ -27,7 +26,7 @@ export type Config = {
 	popup: {
 		target: string[];
 	};
-	areaSwitcher: {
+	areaSwitcher?: {
 		areas: {
 			title: string;
 			latlng: number[];
@@ -39,7 +38,15 @@ export type Config = {
 	};
 	elevation?: {
 		url: string;
-		options: ElevationOptions;
+		options?: {
+			tileSize?: number;
+			font?: string[];
+			fontSize?: number;
+			fontHalo?: number;
+			mainColor?: string;
+			haloColor?: string;
+			units?: string;
+		};
 	};
 	valhalla?: {
 		url: string;

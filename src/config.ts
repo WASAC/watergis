@@ -1,119 +1,117 @@
 import type { Config } from './lib/types';
 
 export const config: Config = {
-	title: 'GIS for Water',
-	url: 'https://water-gis.com',
-	logo: 'https://raw.githubusercontent.com/watergis/logo/main/logo.svg',
-	basePath: process.env.NODE_ENV === 'production' ? '/sveltekit-watergis-template' : '',
+	title: 'WASAC',
+	url: 'https://wasac.rw',
+	logo: 'https://raw.githubusercontent.com/wasac/logo/main/logo.png',
+	basePath: process.env.NODE_ENV === 'production' ? '/watergis' : '',
 	// change attribution to yours
-	attribution: '©NARWASSCO',
+	attribution: "©<a href='http://wasac.rw'>WASAC,Ltd.</a>",
 	// change stylefiles URLs to yours
 	styles: [
 		{
-			title: 'UNVT Water (OSM)',
-			uri: `https://narwassco.github.io/mapbox-stylefiles/unvt/style.json`
+			title: 'OSM',
+			uri: `https://wasac.github.io/mapbox-stylefiles/unvt/style.json`
 		},
 		{
-			title: 'UNVT Water (Building)',
-			uri: `https://narwassco.github.io/mapbox-stylefiles/unvt/style-buildings.json`
+			title: 'OSM (Open Building)',
+			uri: `https://wasac.github.io/mapbox-stylefiles/unvt/style-buildings.json`
 		},
 		{
-			title: 'Satellite Water',
-			uri: `https://narwassco.github.io/mapbox-stylefiles/unvt/style-aerial.json`
-		},
-		{
-			title: 'UNVT Sewer',
-			uri: `https://narwassco.github.io/mapbox-stylefiles/unvt/style-sewer.json`
-		},
-		{
-			title: 'Satellite Sewer',
-			uri: `https://narwassco.github.io/mapbox-stylefiles/unvt/style-aerial-sewer.json`
+			title: 'Bing Aerial',
+			uri: `https://wasac.github.io/mapbox-stylefiles/unvt/style-aerial.json`
 		}
 	],
 	// change initial location and zoom level to yours
-	center: { lng: 35.87063, lat: -1.08551 },
-	zoom: 13,
+	center: [30.0291, -2.0032],
+	zoom: 9,
 	// you can put your geojson file for searching functions
 	search: {
-		url: 'https://narwassco.github.io/vt/meter.geojson',
-		target: ['connno', 'serialno', 'village'],
+		url: 'https://wasac.github.io/vt/wss.geojson',
+		target: ['wss_name', 'district', 'po_name'],
 		format: (p) => {
 			const label: string[] = [];
-			const targets = ['connno', 'serialno', 'village'];
+			const targets = ['wss_id', 'wss_name', 'po_name', 'district'];
 			targets.forEach((target) => {
 				if (p[target]) label.push(p[target]);
 			});
 			return label.length > 0 ? label.join(', ') : '';
 		},
-		place_type: ['meter'],
-		placeholder: 'Search CONN NO or S/N',
-		zoom: 17
+		place_type: ['wss'],
+		placeholder: 'Search WSS/PO/District',
+		zoom: 13
 	},
 	// please specify layers' name for showing popup with attributes table.
 	popup: {
 		target: [
-			'meter',
-			'flow meter',
-			'valve',
-			'washout',
-			'firehydrant',
-			'tank',
+			'handpump',
+			'improvedspring',
+			'dugwell',
+			'solarpump',
+			'otherwaterpoint',
+			'household',
+			'publictap',
+			'waterkiosk',
+			'industrial',
+			'institution',
+			'other connection',
+			'chamber',
+			'reservoir',
+			'pumping-station',
+			'watersource',
 			'pipeline',
-			'pg-building',
-			'sewer-connection',
-			'sewer_commercial',
-			'sewer_institution',
-			'sewer_public_toilet',
-			'sewer_pipeline',
-			'sewer_treatment_plant',
-			'manhole'
+			'wss',
+			'pg-building'
 		]
 	},
 	// please specify your covered area if you have multipul locations to do waterworks
-	areaSwitcher: {
-		areas: [
-			{ title: 'Narok', latlng: [35.87063, -1.08551], zoom: 14 },
-			{ title: "Ololulung'a", latlng: [35.65072, -1.0085], zoom: 13 },
-			{ title: 'Kilgoris', latlng: [34.87533, -1.00278], zoom: 14 },
-			{ title: 'Suswa', latlng: [36.33078, -1.05307], zoom: 13 }
-		]
-	},
+	// areaSwitcher: {
+	// 	areas: [
+	// 		{ title: 'Narok', latlng: [35.87063, -1.08551], zoom: 14 },
+	// 		{ title: "Ololulung'a", latlng: [35.65072, -1.0085], zoom: 13 },
+	// 		{ title: 'Kilgoris', latlng: [34.87533, -1.00278], zoom: 14 },
+	// 		{ title: 'Suswa', latlng: [36.33078, -1.05307], zoom: 13 }
+	// 	]
+	// },
 	// please specify layer name for showing in legend panel.
 	legend: {
 		targets: {
+			village: 'Village',
+			'village-annotation': 'Village Label',
+			cell: 'Cell',
+			'cell-annotation': 'Cell Label',
+			sector: 'Sector',
+			'sector-annotation': 'Sector Label',
+			district: 'District',
+			'district-annotation': 'District Label',
+			wss: 'WSS',
+			'wss-annotation': 'WSS Label',
 			pipeline: 'Pipeline',
 			pipeline_annotation: 'Pipeline Label',
-			meter: 'Water Meter',
-			'flow meter': 'Flow Meter',
-			valve: 'Valve',
-			firehydrant: 'Fire Hydrant',
-			washout: 'Washout',
-			tank: 'Tank',
-			tank_annotation: 'Tank Label',
-			wtp: 'WTP',
-			wtp_annotation: 'WTP Label',
-			intake: 'Intake',
-			intake_annotation: 'Intake Label',
+			watersource: 'Water Source',
+			reservoir: 'Reservoir',
+			'pumping-station': 'Pumping Station',
+			chamber: 'Chamber',
+			household: 'Household',
+			publictap: 'Public Tap',
+			waterkiosk: 'Water Kiosk',
+			industrial: 'Industrial',
+			institution: 'Institution',
+			'other connection': 'Other connection',
+			handpump: 'Hand Pump',
+			improvedspring: 'Improved Spring',
+			dugwell: 'Dug well',
+			solarpump: 'Solar Pump',
+			otherwaterpoint: 'Other water point',
 			parcels: 'Parcels',
 			parcels_annotation: 'Parcels Label',
-			village: 'Village',
-			village_annotation: 'Village Label',
-			dma: 'DMA',
-			'dma-annotation': 'DMA Label',
 			'contour-line': 'Countour',
 			'contour-label': 'Contour Label',
-			hillshade: 'Hillshade',
-			sewer_connection: 'Households (Sewer)',
-			sewer_commercial: 'Commecial (Sewer)',
-			sewer_institution: 'Institution (Sewer)',
-			sewer_public_toilet: 'Public Toilet (Sewer)',
-			manhole: 'Manhole',
-			sewer_pipeline: 'Sewer pipeline',
-			sewer_treatment_plant: 'Wastewater treatment plant'
+			hillshade: 'Hillshade'
 		}
 	},
 	elevation: {
-		url: 'https://narwassco.github.io/narok-terrain/tiles/{z}/{x}/{y}.png',
+		url: 'https://wasac.github.io/rw-terrain/tiles/{z}/{x}/{y}.png',
 		options: {
 			tileSize: 512,
 			font: ['Roboto Medium'],
