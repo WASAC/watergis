@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Accordion, { Panel, Header, Content } from '@smui-extra/accordion';
 	import IconButton, { Icon } from '@smui/icon-button';
+	import { config } from '../config';
 	import SearchControl from './SearchControl.svelte';
 	import ZoomToAreaControl from './ZoomToAreaControl.svelte';
 	export let isSearchTabVisible = false;
@@ -17,18 +18,20 @@
 {#if isSearchTabVisible}
 	<div class="accordion-container">
 		<Accordion multiple>
-			<Panel bind:open={panelZoomOpen}>
-				<Header>
-					Zoom to area
-					<IconButton slot="icon" toggle pressed={panelZoomOpen}>
-						<Icon class="material-icons" on>expand_less</Icon>
-						<Icon class="material-icons">expand_more</Icon>
-					</IconButton>
-				</Header>
-				<Content>
-					<ZoomToAreaControl on:zoomed={zoomed} />
-				</Content>
-			</Panel>
+			{#if config.areaSwitcher}
+				<Panel bind:open={panelZoomOpen}>
+					<Header>
+						Zoom to area
+						<IconButton slot="icon" toggle pressed={panelZoomOpen}>
+							<Icon class="material-icons" on>expand_less</Icon>
+							<Icon class="material-icons">expand_more</Icon>
+						</IconButton>
+					</Header>
+					<Content>
+						<ZoomToAreaControl on:zoomed={zoomed} />
+					</Content>
+				</Panel>
+			{/if}
 			<Panel bind:open={panelSearchOpen}>
 				<Header>
 					Search

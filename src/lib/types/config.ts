@@ -27,7 +27,7 @@ export type Config = {
 	popup: {
 		target: string[];
 	};
-	areaSwitcher: {
+	areaSwitcher?: {
 		areas: {
 			title: string;
 			latlng: number[];
