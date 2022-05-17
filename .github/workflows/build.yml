@@ -41,5 +41,5 @@ jobs:
           npm run build
           git config --global user.name "wasac+githubci"
           git config --global user.email "wasac+githubci@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${NODE_AUTH_TOKEN}@github.com/wasac/sveltekit-watergis-template.git
+          git remote set-url origin https://x-access-token:${NODE_AUTH_TOKEN}@github.com/wasac/watergis.git
           npm run deploy

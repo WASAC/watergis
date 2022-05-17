@@ -4,7 +4,7 @@ export const config: Config = {
 	title: 'WASAC',
 	url: 'https://wasac.rw',
 	logo: 'https://raw.githubusercontent.com/wasac/logo/main/logo.png',
-	basePath: process.env.NODE_ENV === 'production' ? '/sveltekit-watergis-template' : '',
+	basePath: process.env.NODE_ENV === 'production' ? '/watergis' : '',
 	// change attribution to yours
 	attribution: "©<a href='http://wasac.rw'>WASAC,Ltd.</a>",
 	// change stylefiles URLs to yours
