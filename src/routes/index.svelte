@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Water and Sewerage Map for Narok Water</title>
+	<title>Water Map for WASAC</title>
 </svelte:head>
 
 <Header bind:drawerOpen />
