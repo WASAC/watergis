@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="description" content="" />
-		<link rel="icon" href="/sveltekit-watergis-template/favicon.png" />
+		<link rel="icon" href="/watergis/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 		<link
@@ -11,15 +11,15 @@
 			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"
 		/>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" />
-		<meta http-equiv="content-security-policy" content=""><link rel="stylesheet" href="/sveltekit-watergis-template/smui.css" media="(prefers-color-scheme: light)" data-svelte="svelte-7r4yyr">
-		<link rel="stylesheet" href="/sveltekit-watergis-template/smui-dark.css" media="screen and (prefers-color-scheme: dark)" data-svelte="svelte-7r4yyr">
-	<link rel="stylesheet" href="/sveltekit-watergis-template/_app/assets/index-9131647a.css">
-	<link rel="modulepreload" href="/sveltekit-watergis-template/_app/start-68c513cb.js">
-	<link rel="modulepreload" href="/sveltekit-watergis-template/_app/chunks/index-110af84d.js">
-	<link rel="modulepreload" href="/sveltekit-watergis-template/_app/chunks/preload-helper-82916016.js">
-	<link rel="modulepreload" href="/sveltekit-watergis-template/_app/layout.svelte-2eca140a.js">
-	<link rel="modulepreload" href="/sveltekit-watergis-template/_app/pages/index.svelte-8302544f.js">
-	<link rel="modulepreload" href="/sveltekit-watergis-template/_app/chunks/index-55c95709.js">
+		<meta http-equiv="content-security-policy" content=""><title>Water and Sewerage Map for Narok Water</title><link rel="stylesheet" href="/watergis/smui.css" media="(prefers-color-scheme: light)" data-svelte="svelte-7r4yyr">
+		<link rel="stylesheet" href="/watergis/smui-dark.css" media="screen and (prefers-color-scheme: dark)" data-svelte="svelte-7r4yyr">
+	<link rel="stylesheet" href="/watergis/_app/assets/index-26bc6039.css">
+	<link rel="modulepreload" href="/watergis/_app/start-3d8b32d2.js">
+	<link rel="modulepreload" href="/watergis/_app/chunks/index-110af84d.js">
+	<link rel="modulepreload" href="/watergis/_app/chunks/preload-helper-2f63978d.js">
+	<link rel="modulepreload" href="/watergis/_app/layout.svelte-2eca140a.js">
+	<link rel="modulepreload" href="/watergis/_app/pages/index.svelte-6e94ed4f.js">
+	<link rel="modulepreload" href="/watergis/_app/chunks/index-0d299709.js">
 	</head>
 	<style type="text/css">
 		html,
@@ -39,10 +39,12 @@
 
 
 
+
+
 <header class="mdc-top-app-bar mdc-top-app-bar--fixed" style=""><div class="mdc-top-app-bar__row"><section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"><button class="material-icons mdc-icon-button mdc-icon-button--display-flex mdc-top-app-bar__navigation-icon" style=""><div class="mdc-icon-button__ripple"></div>
   menu</button>
-			<a href="https://water-gis.com"><img src="https://raw.githubusercontent.com/watergis/logo/main/logo.svg" alt="logo" class="logo svelte-1cnjkz4"></a>
-			<span class="mdc-top-app-bar__title">GIS for Water</span>
+			<a href="https://wasac.rw"><img src="https://raw.githubusercontent.com/wasac/logo/main/logo.png" alt="logo" class="logo svelte-1cnjkz4"></a>
+			<span class="mdc-top-app-bar__title">WASAC</span>
 </section>
 		<section></section>
 		<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar"><button class="material-icons mdc-icon-button mdc-icon-button--display-flex mdc-top-app-bar__action-item" style="" aria-label="Print"><div class="mdc-icon-button__ripple"></div>
@@ -194,11 +196,9 @@
 
   
 
-<div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth" style=""><ul class="mdc-deprecated-list" role="listbox"><li class="mdc-deprecated-list-item mdc-deprecated-list-item--selected" style="" role="option" aria-selected="true" aria-disabled="false" tabindex="0" data-value="https://narwassco.github.io/mapbox-stylefiles/unvt/style.json" value="https://narwassco.github.io/mapbox-stylefiles/unvt/style.json"><span class="mdc-deprecated-list-item__ripple"></span>UNVT Water (OSM)
-</li><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="https://narwassco.github.io/mapbox-stylefiles/unvt/style-buildings.json" value="https://narwassco.github.io/mapbox-stylefiles/unvt/style-buildings.json"><span class="mdc-deprecated-list-item__ripple"></span>UNVT Water (Building)
-</li><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="https://narwassco.github.io/mapbox-stylefiles/unvt/style-aerial.json" value="https://narwassco.github.io/mapbox-stylefiles/unvt/style-aerial.json"><span class="mdc-deprecated-list-item__ripple"></span>Satellite Water
-</li><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="https://narwassco.github.io/mapbox-stylefiles/unvt/style-sewer.json" value="https://narwassco.github.io/mapbox-stylefiles/unvt/style-sewer.json"><span class="mdc-deprecated-list-item__ripple"></span>UNVT Sewer
-</li><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="https://narwassco.github.io/mapbox-stylefiles/unvt/style-aerial-sewer.json" value="https://narwassco.github.io/mapbox-stylefiles/unvt/style-aerial-sewer.json"><span class="mdc-deprecated-list-item__ripple"></span>Satellite Sewer
+<div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth" style=""><ul class="mdc-deprecated-list" role="listbox"><li class="mdc-deprecated-list-item mdc-deprecated-list-item--selected" style="" role="option" aria-selected="true" aria-disabled="false" tabindex="0" data-value="https://wasac.github.io/mapbox-stylefiles/unvt/style.json" value="https://wasac.github.io/mapbox-stylefiles/unvt/style.json"><span class="mdc-deprecated-list-item__ripple"></span>OSM
+</li><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="https://wasac.github.io/mapbox-stylefiles/unvt/style-buildings.json" value="https://wasac.github.io/mapbox-stylefiles/unvt/style-buildings.json"><span class="mdc-deprecated-list-item__ripple"></span>OSM (Open Building)
+</li><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="https://wasac.github.io/mapbox-stylefiles/unvt/style-aerial.json" value="https://wasac.github.io/mapbox-stylefiles/unvt/style-aerial.json"><span class="mdc-deprecated-list-item__ripple"></span>Bing Aerial
 </li>
 </ul>
 </div></div>
@@ -238,11 +238,11 @@
 </div>
 
 
-		<script type="module" data-hydrate="y6jify">
-		import { start } from "/sveltekit-watergis-template/_app/start-68c513cb.js";
+		<script type="module" data-hydrate="5m1sww">
+		import { start } from "/watergis/_app/start-3d8b32d2.js";
 		start({
-			target: document.querySelector('[data-hydrate="y6jify"]').parentNode,
-			paths: {"base":"/sveltekit-watergis-template","assets":"/sveltekit-watergis-template"},
+			target: document.querySelector('[data-hydrate="5m1sww"]').parentNode,
+			paths: {"base":"/watergis","assets":"/watergis"},
 			session: {},
 			route: true,
 			spa: false,
@@ -251,8 +251,8 @@
 				status: 200,
 				error: null,
 				nodes: [
-					import("/sveltekit-watergis-template/_app/layout.svelte-2eca140a.js"),
-						import("/sveltekit-watergis-template/_app/pages/index.svelte-8302544f.js")
+					import("/watergis/_app/layout.svelte-2eca140a.js"),
+						import("/watergis/_app/pages/index.svelte-6e94ed4f.js")
 				],
 				params: {},
 				routeId: ""
