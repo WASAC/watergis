@@ -18,7 +18,7 @@ export type Config = {
 	search?: {
 		url: string;
 		target: string[];
-		format: (p: { customer: string; connno: string; serialno: string; village: string }) => string;
+		format: (p: { [key: string]: string }) => string;
 		place_type: string[];
 		placeholder: string;
 		zoom: number;

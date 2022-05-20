@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Water Map for WASAC</title>
+	<title>{config.title}</title>
 </svelte:head>
 
 <Header bind:drawerOpen />
