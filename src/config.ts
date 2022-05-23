@@ -150,7 +150,7 @@ export const config: Config = {
 		}
 	},
 	terrain: {
-		source: 'narok-dem',
+		source: 'rwanda-dem',
 		exaggeration: 1
 	}
 };
