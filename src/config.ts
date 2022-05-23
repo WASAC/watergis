@@ -148,5 +148,9 @@ export const config: Config = {
 				}
 			]
 		}
+	},
+	terrain: {
+		source: 'narok-dem',
+		exaggeration: 1
 	}
 };
