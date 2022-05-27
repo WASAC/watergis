@@ -129,6 +129,40 @@
 			});
 		});
 
+		//set feature-state for WSS
+		let hoverLayers = ['wss', 'pipeline', 'watersource'];
+		let hoveredWssId;
+		map2.on('mousemove', 'wss', function (e) {
+			if (e.features.length > 0) {
+				if (hoveredWssId) {
+					hoverLayers.forEach((layer) => {
+						$map.setFeatureState(
+							{ source: 'assets', sourceLayer: layer, id: hoveredWssId },
+							{ hover: false }
+						);
+					});
+				}
+				hoveredWssId = e.features[0].id;
+				hoverLayers.forEach((layer) => {
+					$map.setFeatureState(
+						{ source: 'assets', sourceLayer: layer, id: hoveredWssId },
+						{ hover: true }
+					);
+				});
+			}
+		});
+		map2.on('mouseleave', 'wss', function () {
+			if (hoveredWssId) {
+				hoverLayers.forEach((layer) => {
+					$map.setFeatureState(
+						{ source: 'assets', sourceLayer: layer, id: hoveredWssId },
+						{ hover: false }
+					);
+				});
+			}
+			hoveredWssId = null;
+		});
+
 		map.update(() => map2);
 	});
 </script>
