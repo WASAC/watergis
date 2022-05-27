@@ -152,5 +152,8 @@ export const config: Config = {
 	terrain: {
 		source: 'rwanda-dem',
 		exaggeration: 1
+	},
+	adminBoundary: {
+		url: 'https://wasac.github.io/rw-admin-boundary'
 	}
 };
