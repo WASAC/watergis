@@ -55,4 +55,7 @@ export type Config = {
 		};
 	};
 	terrain?: TerrainSpecification;
+	adminBoundary?: {
+		url: string;
+	};
 };
