@@ -26,7 +26,6 @@
 		adminType?: 'province' | 'district' | 'sector' | 'cell' | 'village'
 	) => {
 		let geojson: GeoJSONFeature;
-		let url: string;
 		switch (adminType) {
 			case 'province':
 				if (selectedProvId) {
