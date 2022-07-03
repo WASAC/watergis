@@ -165,9 +165,8 @@
 	<div slot="secondary" class="main-content">
 		<slot />
 		<div />
-		å
-	</div></Split
->
+	</div>
+</Split>
 
 <style lang="scss">
 	$height: calc(100vh - 64px);
