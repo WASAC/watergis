@@ -6,10 +6,10 @@
 	import { queriedFeatures } from '../stores';
 	import LayerListPanel from './LayerListPanel.svelte';
 	import AttributesPanel from './AttributesPanel.svelte';
-	import SearchPanel from './SearchPanel.svelte';
 	import AdvancedPanel from './AdvancedPanel.svelte';
 	import { TabNames } from '$lib/constants';
 	import { map } from '../stores';
+	import SearchPanel from './SearchPanel.svelte';
 
 	let innerWidth = 0;
 	let innerHeight = 0;
@@ -44,8 +44,8 @@
 	];
 	let activeTab = tabs[0];
 	let isLayersTabVisible = false;
-	let isAttributesTabVisible = false;
 	let isSearchTabVisible = false;
+	let isAttributesTabVisible = false;
 	let isAdvancedTabVisible = false;
 	let splitControl: Split;
 	let splitterSize = '0px';
@@ -53,18 +53,18 @@
 	$: activeTab, changeActiveTab();
 	const changeActiveTab = () => {
 		isLayersTabVisible = false;
-		isAttributesTabVisible = false;
 		isSearchTabVisible = false;
+		isAttributesTabVisible = false;
 		isAdvancedTabVisible = false;
 		switch (activeTab.label) {
 			case TabNames.LAYERS:
 				isLayersTabVisible = true;
 				break;
-			case TabNames.ATTRIBUTES:
-				isAttributesTabVisible = true;
-				break;
 			case TabNames.SEARCH:
 				isSearchTabVisible = true;
+				break;
+			case TabNames.ATTRIBUTES:
+				isAttributesTabVisible = true;
 				break;
 			case TabNames.ADVANCED:
 				isAdvancedTabVisible = true;
@@ -104,7 +104,8 @@
 				splitControl.setPercent(100);
 				splitterSize = '0px';
 			} else {
-				splitControl.setPercent(25);
+				const widthPecent = (380 / innerWidth) * 100;
+				splitControl.setPercent(widthPecent);
 				splitterSize = '10px';
 				splitControl;
 			}
@@ -137,7 +138,7 @@
 
 <Split
 	initialPrimarySize="0%"
-	minPrimarySize={open ? '200px' : '0px'}
+	minPrimarySize={open ? '300px' : '0px'}
 	minSecondarySize={isMobile ? '0px' : '50%'}
 	{splitterSize}
 	on:changed={splitterChanged}
@@ -157,13 +158,14 @@
 			</Tab>
 		</TabBar>
 		<LayerListPanel {isLayersTabVisible} bind:updateLayers />
-		<SearchPanel {isSearchTabVisible} bind:parentPanelOpen={open} />
+		<SearchPanel {isSearchTabVisible} />
 		<AttributesPanel {isAttributesTabVisible} />
 		<AdvancedPanel {isAdvancedTabVisible} />
 	</div>
 	<div slot="secondary" class="main-content">
 		<slot />
 		<div />
+		å
 	</div></Split
 >
 
