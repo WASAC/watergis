@@ -11,21 +11,15 @@
 			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"
 		/>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" />
-		<meta http-equiv="content-security-policy" content=""><title>WASAC Rural Water Network</title><script async src="https://www.googletagmanager.com/gtag/js?id=UA-170080825-3" data-svelte="svelte-1nhp96c"></script><script data-svelte="svelte-1nhp96c">window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-		gtag('config', 'UA-170080825-3');
-	</script><link rel="stylesheet" href="/smui.css" media="(prefers-color-scheme: light)" data-svelte="svelte-7r4yyr">
+		<meta http-equiv="content-security-policy" content=""><link rel="stylesheet" href="/smui.css" media="(prefers-color-scheme: light)" data-svelte="svelte-7r4yyr">
 		<link rel="stylesheet" href="/smui-dark.css" media="screen and (prefers-color-scheme: dark)" data-svelte="svelte-7r4yyr">
-	<link rel="stylesheet" href="/_app/assets/index-c9387a87.css">
-	<link rel="modulepreload" href="/_app/start-bfc10de1.js">
-	<link rel="modulepreload" href="/_app/chunks/index-1f74207a.js">
-	<link rel="modulepreload" href="/_app/chunks/preload-helper-a5242efd.js">
-	<link rel="modulepreload" href="/_app/layout.svelte-a525b02f.js">
-	<link rel="modulepreload" href="/_app/pages/index.svelte-ff0182e6.js">
-	<link rel="modulepreload" href="/_app/chunks/index-811b70fd.js">
+	<link href="/_app/immutable/assets/index-0578a9d0.css" rel="stylesheet">
+	<link rel="modulepreload" href="/_app/immutable/start-5f5acc16.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-451968bf.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/preload-helper-c9f5c660.js">
+	<link rel="modulepreload" href="/_app/immutable/layout.svelte-d36d8c46.js">
+	<link rel="modulepreload" href="/_app/immutable/pages/index.svelte-61c532d0.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-49f31db9.js">
 	</head>
 	<style type="text/css">
 		html,
@@ -41,7 +35,15 @@
 		<div>
 
 
-
+<sveltekit:head><title>WASAC Rural Water Network</title>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170080825-3"></script>
+	<script>window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-170080825-3');
+	</script></sveltekit:head>
 
 
 
@@ -245,10 +247,13 @@
 </div>
 
 
-		<script type="module" data-hydrate="vba38w">
-		import { start } from "/_app/start-bfc10de1.js";
+		<script type="module" data-sveltekit-hydrate="66z9cy">
+		import { set_public_env, start } from "/_app/immutable/start-5f5acc16.js";
+
+		set_public_env({});
+
 		start({
-			target: document.querySelector('[data-hydrate="vba38w"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="66z9cy"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
@@ -257,10 +262,7 @@
 			hydrate: {
 				status: 200,
 				error: null,
-				nodes: [
-					import("/_app/layout.svelte-a525b02f.js"),
-						import("/_app/pages/index.svelte-ff0182e6.js")
-				],
+				nodes: [0, 2],
 				params: {},
 				routeId: ""
 			}
