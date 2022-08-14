@@ -1,16 +1,16 @@
 const l = [
   "/_app/immutable/assets/information-b8b32f49.svg",
-  "/_app/immutable/start-1299ab5e.js",
+  "/_app/immutable/start-d56f65f3.js",
   "/_app/immutable/layout.svelte-d36d8c46.js",
   "/_app/immutable/error.svelte-3a6f2cea.js",
-  "/_app/immutable/pages/index.svelte-15f64188.js",
+  "/_app/immutable/pages/index.svelte-98562442.js",
   "/_app/immutable/chunks/index-451968bf.js",
   "/_app/immutable/chunks/preload-helper-c9f5c660.js",
-  "/_app/immutable/chunks/index-4fe89fca.js",
+  "/_app/immutable/chunks/index-223cc705.js",
   "/_app/immutable/assets/index-821d967d.css",
   "/_app/immutable/chunks/html2canvas.esm-fb42d204.js",
   "/_app/immutable/chunks/purify.es-655bdd74.js",
-  "/_app/immutable/chunks/index.es-446fb7dd.js"
+  "/_app/immutable/chunks/index.es-207fc2bf.js"
 ], h = [
   "/.nojekyll",
   "/assets/icons/icon-128x128.png",
@@ -28,7 +28,7 @@ const l = [
   "/robots.txt",
   "/smui-dark.css",
   "/smui.css"
-], i = "1660488909093", a = self, o = `cache${i}`, p = l.concat(h), m = new Set(p);
+], i = "1660494884865", a = self, o = `cache${i}`, p = l.concat(h), m = new Set(p);
 a.addEventListener("install", (s) => {
   s.waitUntil(
     caches.open(o).then((e) => e.addAll(p)).then(() => {
