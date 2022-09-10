@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Accordion, { Panel, Header, Content } from '@smui-extra/accordion';
 	import IconButton, { Icon } from '@smui/icon-button';
-	import { config } from '../config';
+	import { config } from '../../config';
 	import ZoomToAdminControl from './ZoomToAdminControl.svelte';
 	export let isSearchTabVisible = false;
 

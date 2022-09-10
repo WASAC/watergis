@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Select, { Option } from '@smui/select';
 	import type { GeoJSONFeature } from 'maplibre-gl';
-	import { config } from '../config';
-	import { map } from '../stores';
+	import { config } from '../../config';
+	import { map } from '$lib/stores';
 
 	let selectedProvId: string;
 	let selectedDistId: string;
