@@ -1,16 +1,16 @@
 {
-  "src/css/images/information.svg": {
+  "src/lib/css/images/information.svg": {
     "file": "_app/immutable/assets/information-b8b32f49.svg",
-    "src": "src/css/images/information.svg"
+    "src": "src/lib/css/images/information.svg"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-450132f5.js",
+    "file": "_app/immutable/start-61933f59.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
       "_preload-helper-aa6bc0ce.js",
       "_index-b92bc20f.js",
-      "_singletons-ee6ea232.js"
+      "_singletons-164e1dc5.js"
     ],
     "dynamicImports": [
       ".svelte-kit/generated/nodes/0.js",
@@ -19,7 +19,7 @@
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/components/layout.svelte": {
-    "file": "_app/immutable/components/layout.svelte-7d20b4b2.js",
+    "file": "_app/immutable/components/layout.svelte-04768dea.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/components/layout.svelte",
     "isEntry": true,
     "imports": [
@@ -27,21 +27,21 @@
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
-    "file": "_app/immutable/components/error.svelte-8892c2b6.js",
+    "file": "_app/immutable/components/error.svelte-874a3781.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
     "isEntry": true,
     "imports": [
       "_index-b92bc20f.js",
-      "_stores-11f3aec3.js"
+      "_stores-9c3c6354.js"
     ]
   },
   "src/routes/+page.svelte": {
-    "file": "_app/immutable/components/pages/_page.svelte-41025a1e.js",
+    "file": "_app/immutable/components/pages/_page.svelte-38431654.js",
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
       "_index-b92bc20f.js",
-      "__page-d134af06.js"
+      "__page-83b4d5a8.js"
     ]
   },
   "src/routes/+page.ts": {
@@ -52,8 +52,8 @@
       "__page-802cc2a3.js"
     ]
   },
-  "_singletons-ee6ea232.js": {
-    "file": "_app/immutable/chunks/singletons-ee6ea232.js",
+  "_singletons-164e1dc5.js": {
+    "file": "_app/immutable/chunks/singletons-164e1dc5.js",
     "imports": [
       "_index-b92bc20f.js"
     ]
@@ -64,20 +64,20 @@
   "_index-b92bc20f.js": {
     "file": "_app/immutable/chunks/index-b92bc20f.js"
   },
-  "_stores-11f3aec3.js": {
-    "file": "_app/immutable/chunks/stores-11f3aec3.js",
+  "_stores-9c3c6354.js": {
+    "file": "_app/immutable/chunks/stores-9c3c6354.js",
     "imports": [
       "_index-b92bc20f.js",
-      "_singletons-ee6ea232.js"
+      "_singletons-164e1dc5.js"
     ]
   },
-  "__page-d134af06.js": {
-    "file": "_app/immutable/chunks/_page-d134af06.js",
+  "__page-83b4d5a8.js": {
+    "file": "_app/immutable/chunks/_page-83b4d5a8.js",
     "imports": [
       "_index-b92bc20f.js",
-      "_singletons-ee6ea232.js",
+      "_singletons-164e1dc5.js",
       "_preload-helper-aa6bc0ce.js",
-      "_stores-11f3aec3.js"
+      "_stores-9c3c6354.js"
     ],
     "dynamicImports": [
       "node_modules/html2canvas/dist/html2canvas.esm.js",
@@ -95,7 +95,7 @@
     "file": "_app/immutable/chunks/_page-802cc2a3.js"
   },
   ".svelte-kit/generated/nodes/0.js": {
-    "file": "_app/immutable/chunks/0-17740ea7.js",
+    "file": "_app/immutable/chunks/0-0bc2eda4.js",
     "src": ".svelte-kit/generated/nodes/0.js",
     "isDynamicEntry": true,
     "imports": [
@@ -103,7 +103,7 @@
     ]
   },
   ".svelte-kit/generated/nodes/1.js": {
-    "file": "_app/immutable/chunks/1-fc24d41b.js",
+    "file": "_app/immutable/chunks/1-bd439926.js",
     "src": ".svelte-kit/generated/nodes/1.js",
     "isDynamicEntry": true,
     "imports": [
@@ -111,12 +111,12 @@
     ]
   },
   ".svelte-kit/generated/nodes/2.js": {
-    "file": "_app/immutable/chunks/2-45c5b1ae.js",
+    "file": "_app/immutable/chunks/2-2be18122.js",
     "src": ".svelte-kit/generated/nodes/2.js",
     "isDynamicEntry": true,
     "imports": [
       "__page-802cc2a3.js",
-      "__page-d134af06.js"
+      "__page-83b4d5a8.js"
     ]
   },
   "node_modules/html2canvas/dist/html2canvas.esm.js": {
@@ -130,11 +130,11 @@
     "isDynamicEntry": true
   },
   "node_modules/canvg/lib/index.es.js": {
-    "file": "_app/immutable/chunks/index.es-130c972e.js",
+    "file": "_app/immutable/chunks/index.es-05b8a467.js",
     "src": "node_modules/canvg/lib/index.es.js",
     "isDynamicEntry": true,
     "imports": [
-      "__page-d134af06.js"
+      "__page-83b4d5a8.js"
     ]
   },
   "_page.css": {
