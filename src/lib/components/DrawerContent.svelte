@@ -156,7 +156,7 @@
 				<Label>{tab.label}</Label>
 			</Tab>
 		</TabBar>
-		<LayerListPanel {isLayersTabVisible} bind:updateLayers />
+		<LayerListPanel {isLayersTabVisible} />
 		<SearchPanel {isSearchTabVisible} />
 		<AttributesPanel {isAttributesTabVisible} />
 		<AdvancedPanel {isAdvancedTabVisible} />
