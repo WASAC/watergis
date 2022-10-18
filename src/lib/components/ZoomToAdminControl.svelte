@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Select, { Option } from '@smui/select';
 	import type { GeoJSONFeature } from 'maplibre-gl';
 	import { config } from '../../config';
 	import { map } from '$lib/stores';
@@ -147,80 +146,72 @@
 	};
 </script>
 
-<Select
-	variant="outlined"
-	bind:value={selectedProvId}
-	style="width:100%;padding-left: 0em;padding-bottom: 0.5em;"
->
-	<Option value="">Select province...</Option>
-	{#each provinces as feature}
-		<Option value={feature.properties.id}>{feature.properties.name}</Option>
-	{/each}
-</Select>
+<div class="columns">
+	<div class="column is-full p-2">
+		<div class="select is-fullwidth">
+			<select bind:value={selectedProvId}>
+				<option value="">Select province...</option>
+				{#each provinces as feature}
+					<option value={feature.properties.id}>{feature.properties.name}</option>
+				{/each}
+			</select>
+		</div>
+	</div>
+</div>
+
 {#if selectedProvId}
-	<Select
-		variant="outlined"
-		bind:value={selectedDistId}
-		style="width:100%;padding-left: 0em;padding-bottom: 0.5em;"
-	>
-		<Option value="">Select district...</Option>
-		{#each districts as feature}
-			<Option value={feature.properties.id}>{feature.properties.name}</Option>
-		{/each}
-	</Select>
+	<div class="columns">
+		<div class="column is-full p-2">
+			<div class="select is-fullwidth">
+				<select bind:value={selectedDistId}>
+					<option value="">Select district...</option>
+					{#each districts as feature}
+						<option value={feature.properties.id}>{feature.properties.name}</option>
+					{/each}
+				</select>
+			</div>
+		</div>
+	</div>
 {/if}
 {#if selectedProvId && selectedDistId}
-	<Select
-		variant="outlined"
-		bind:value={selectedSectId}
-		style="width:100%;padding-left: 0em;padding-bottom: 0.5em;"
-	>
-		<Option value="">Select sector...</Option>
-		{#each sectors as feature}
-			<Option value={feature.properties.id}>{feature.properties.name}</Option>
-		{/each}
-	</Select>
+	<div class="columns">
+		<div class="column is-full p-2">
+			<div class="select is-fullwidth">
+				<select bind:value={selectedSectId}>
+					<option value="">Select sector...</option>
+					{#each sectors as feature}
+						<option value={feature.properties.id}>{feature.properties.name}</option>
+					{/each}
+				</select>
+			</div>
+		</div>
+	</div>
 {/if}
 {#if selectedProvId && selectedDistId && selectedSectId}
-	<Select
-		variant="outlined"
-		bind:value={selectedCellId}
-		style="width:100%;padding-left: 0em;padding-bottom: 0.5em;"
-	>
-		<Option value="">Select cell...</Option>
-		{#each cells as feature}
-			<Option value={feature.properties.id}>{feature.properties.name}</Option>
-		{/each}
-	</Select>
+	<div class="columns">
+		<div class="column is-full p-2">
+			<div class="select is-fullwidth">
+				<select bind:value={selectedCellId}>
+					<option value="">Select cell...</option>
+					{#each cells as feature}
+						<option value={feature.properties.id}>{feature.properties.name}</option>
+					{/each}
+				</select>
+			</div>
+		</div>
+	</div>
 {/if}
 {#if selectedProvId && selectedDistId && selectedSectId && selectedCellId}
-	<Select
-		variant="outlined"
-		bind:value={selectedVillId}
-		style="width:100%;padding-left: 0em;padding-bottom: 0.5em;"
-	>
-		<Option value="">Select village...</Option>
-		{#each villages as feature}
-			<Option value={feature.properties.id}>{feature.properties.name}</Option>
-		{/each}
-	</Select>
-{/if}
-
-<!-- {#if config.adminBoundary}
-	<div class="select">
-		<Select variant="outlined" bind:value label="Area" style="width:100%">
-			<Icon class="material-icons" slot="leadingIcon">zoom_in_map</Icon>
-			<Option value="" />
-			{#each areas as areas}
-				<Option value={JSON.stringify(areas)}>{areas.title}</Option>
-			{/each}
-			<svelte:fragment slot="helperText">Select the area zooming to.</svelte:fragment>
-		</Select>
+	<div class="columns">
+		<div class="column is-full p-2">
+			<div class="select is-fullwidth">
+				<select bind:value={selectedVillId}>
+					<option value="">Select village...</option>
+					{#each villages as feature}
+						<option value={feature.properties.id}>{feature.properties.name}</option>
+					{/each}
+				</select>
+			</div>
+		</div>
 	</div>
-{/if} -->
-<style lang="scss">
-	.select {
-		padding-left: 0em;
-		padding-bottom: 0.5em;
-	}
-</style>
+{/if}

@@ -1,8 +1,7 @@
 <script lang="ts">
-	import Accordion, { Panel, Header, Content } from '@smui-extra/accordion';
-	import IconButton, { Icon } from '@smui/icon-button';
 	import { config } from '../../config';
 	import ZoomToAdminControl from './ZoomToAdminControl.svelte';
+	import CollapsiblePanel from './CollapsiblePanel.svelte';
 	export let isSearchTabVisible = false;
 
 	let panelAdminOpen = true;
@@ -10,22 +9,13 @@
 
 {#if isSearchTabVisible}
 	<div class="accordion-container">
-		<Accordion multiple>
-			{#if config.adminBoundary}
-				<Panel bind:open={panelAdminOpen}>
-					<Header>
-						Zoom to admin
-						<IconButton slot="icon" toggle pressed={panelAdminOpen}>
-							<Icon class="material-icons" on>expand_less</Icon>
-							<Icon class="material-icons">expand_more</Icon>
-						</IconButton>
-					</Header>
-					<Content>
-						<ZoomToAdminControl />
-					</Content>
-				</Panel>
-			{/if}
-		</Accordion>
+		{#if config.adminBoundary}
+			<CollapsiblePanel title="Zoom to admin" bind:isPanelOpen={panelAdminOpen}>
+				<div class="card-content">
+					<ZoomToAdminControl />
+				</div>
+			</CollapsiblePanel>
+		{/if}
 	</div>
 {/if}
 
