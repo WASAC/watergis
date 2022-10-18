@@ -1,24 +1,24 @@
 const l = [
   "/_app/immutable/assets/fa-solid-900-d27bc752.woff2",
   "/_app/immutable/assets/fa-solid-900-6d53c706.ttf",
-  "/_app/immutable/start-dd19524c.js",
+  "/_app/immutable/start-05dea9e7.js",
   "/_app/immutable/components/layout.svelte-21b1e40e.js",
-  "/_app/immutable/components/error.svelte-7514b5e3.js",
-  "/_app/immutable/components/pages/_page.svelte-59f470c6.js",
+  "/_app/immutable/components/error.svelte-26edd752.js",
+  "/_app/immutable/components/pages/_page.svelte-97b93599.js",
   "/_app/immutable/modules/pages/_page.ts-f4c35b8f.js",
-  "/_app/immutable/chunks/singletons-4591de71.js",
+  "/_app/immutable/chunks/singletons-88d9bc00.js",
   "/_app/immutable/chunks/index-6dd75127.js",
   "/_app/immutable/chunks/preload-helper-aa6bc0ce.js",
-  "/_app/immutable/chunks/stores-be268456.js",
-  "/_app/immutable/chunks/_page-3106443d.js",
-  "/_app/immutable/assets/_page-44f93433.css",
+  "/_app/immutable/chunks/stores-b885f474.js",
+  "/_app/immutable/chunks/_page-8a09739d.js",
+  "/_app/immutable/assets/_page-e5302732.css",
   "/_app/immutable/chunks/_page-c82b235a.js",
   "/_app/immutable/chunks/0-2bc9ec89.js",
-  "/_app/immutable/chunks/1-8516cbd5.js",
-  "/_app/immutable/chunks/2-b1861a8f.js",
+  "/_app/immutable/chunks/1-ce183eb5.js",
+  "/_app/immutable/chunks/2-6d3c5e35.js",
   "/_app/immutable/chunks/html2canvas.esm-fb42d204.js",
   "/_app/immutable/chunks/purify.es-20117e50.js",
-  "/_app/immutable/chunks/index.es-58ad5777.js"
+  "/_app/immutable/chunks/index.es-b1161769.js"
 ], u = [
   "/.nojekyll",
   "/assets/icons/icon-128x128.png",
@@ -36,7 +36,7 @@ const l = [
   "/robots.txt",
   "/smui-dark.css",
   "/smui.css"
-], i = "1666076841976", a = self, o = `cache${i}`, p = l.concat(u), h = new Set(p);
+], i = "1666088978237", a = self, o = `cache${i}`, p = l.concat(u), h = new Set(p);
 a.addEventListener("install", (s) => {
   s.waitUntil(
     caches.open(o).then((e) => e.addAll(p)).then(() => {
