@@ -9,7 +9,7 @@
 
 	let innerWidth = 0;
 	let innerHeight = 0;
-	let isMobile = innerWidth < 760 ? true : false;
+	let isMobile = innerWidth < 768 ? true : false;
 	$: innerWidth, changeDrawerMode();
 	$: innerHeight, changeDrawerMode();
 	const changeDrawerMode = () => {
