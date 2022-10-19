@@ -1,23 +1,18 @@
 <script lang="ts">
-	import { config } from '../../config';
+	import { config } from '$config';
 	import ZoomToAdminControl from './ZoomToAdminControl.svelte';
-	import CollapsiblePanel from './CollapsiblePanel.svelte';
 	export let isSearchTabVisible = false;
-
-	let panelAdminOpen = true;
 </script>
 
 {#if isSearchTabVisible}
-	<div class="accordion-container">
-		{#if config.adminBoundary}
-			<CollapsiblePanel title="Zoom to admin" bind:isPanelOpen={panelAdminOpen}>
-				<div class="card-content">
-					<ZoomToAdminControl />
-				</div>
-			</CollapsiblePanel>
-		{/if}
-	</div>
+	{#if config.adminBoundary}
+		<div class="card">
+			<div class="card-content">
+				<p class="title is-6">Zoom to admin</p>
+			</div>
+			<div class="content mx-4 mb-4">
+				<ZoomToAdminControl />
+			</div>
+		</div>
+	{/if}
 {/if}
-
-<style lang="scss">
-</style>
