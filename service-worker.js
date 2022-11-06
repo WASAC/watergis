@@ -1,24 +1,24 @@
 const m = [
   "/_app/immutable/assets/fa-solid-900-d27bc752.woff2",
   "/_app/immutable/assets/fa-solid-900-6d53c706.ttf",
-  "/_app/immutable/start-ac992ddd.js",
+  "/_app/immutable/start-75a7afa1.js",
   "/_app/immutable/components/layout.svelte-b9f3653e.js",
-  "/_app/immutable/components/error.svelte-bff34241.js",
-  "/_app/immutable/components/pages/_page.svelte-ffc6f3f6.js",
+  "/_app/immutable/components/error.svelte-3a6180bb.js",
+  "/_app/immutable/components/pages/_page.svelte-fb4b6239.js",
   "/_app/immutable/modules/pages/_page.ts-f4c35b8f.js",
-  "/_app/immutable/chunks/singletons-3e17758f.js",
+  "/_app/immutable/chunks/singletons-492db31b.js",
   "/_app/immutable/chunks/index-fbce07e2.js",
   "/_app/immutable/chunks/index-3d46d3d9.js",
   "/_app/immutable/chunks/preload-helper-b21cceae.js",
-  "/_app/immutable/chunks/_page-ee78e393.js",
+  "/_app/immutable/chunks/_page-c0408e28.js",
   "/_app/immutable/assets/_page-87453f06.css",
   "/_app/immutable/chunks/_page-c82b235a.js",
   "/_app/immutable/chunks/0-a5edf11b.js",
-  "/_app/immutable/chunks/1-6ef0f477.js",
-  "/_app/immutable/chunks/2-f46d39c7.js",
+  "/_app/immutable/chunks/1-ea84ff5d.js",
+  "/_app/immutable/chunks/2-9ffde533.js",
   "/_app/immutable/chunks/html2canvas.esm-fb42d204.js",
   "/_app/immutable/chunks/purify.es-20117e50.js",
-  "/_app/immutable/chunks/index.es-616bf046.js"
+  "/_app/immutable/chunks/index.es-f6dd0f27.js"
 ], h = [
   "/.nojekyll",
   "/assets/icons/icon-128x128.png",
@@ -32,9 +32,8 @@ const m = [
   "/assets/icons/icon-96x96.png",
   "/favicon.png",
   "/manifest.webmanifest",
-  "/map-center.png",
   "/robots.txt"
-], i = "1667163878775", a = self, o = `cache${i}`, p = m.concat(h), u = new Set(p);
+], i = "1667729829559", a = self, o = `cache${i}`, p = m.concat(h), u = new Set(p);
 a.addEventListener("install", (s) => {
   s.waitUntil(
     caches.open(o).then((e) => e.addAll(p)).then(() => {
@@ -51,7 +50,7 @@ a.addEventListener("activate", (s) => {
     })
   );
 });
-async function f(s) {
+async function r(s) {
   const e = await caches.open(`offline${i}`);
   try {
     const t = await fetch(s);
@@ -68,6 +67,6 @@ a.addEventListener("fetch", (s) => {
     return;
   const e = new URL(s.request.url), t = e.protocol.startsWith("http"), c = e.hostname === self.location.hostname && e.port !== self.location.port, n = e.host === self.location.host && u.has(e.pathname), l = s.request.cache === "only-if-cached" && !n;
   t && !c && !l && s.respondWith(
-    (async () => n && await caches.match(s.request) || f(s.request))()
+    (async () => n && await caches.match(s.request) || r(s.request))()
   );
 });
