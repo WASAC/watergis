@@ -1,24 +1,24 @@
 const m = [
   "/_app/immutable/assets/fa-solid-900-d27bc752.woff2",
   "/_app/immutable/assets/fa-solid-900-6d53c706.ttf",
-  "/_app/immutable/start-2f608ef9.js",
-  "/_app/immutable/components/layout.svelte-f25e1fec.js",
-  "/_app/immutable/components/error.svelte-ead5b374.js",
-  "/_app/immutable/components/pages/_page.svelte-a2403832.js",
+  "/_app/immutable/start-88306b99.js",
+  "/_app/immutable/components/layout.svelte-55caf579.js",
+  "/_app/immutable/components/error.svelte-0572596a.js",
+  "/_app/immutable/components/pages/_page.svelte-2d4ca2ae.js",
   "/_app/immutable/modules/pages/_page.ts-f4c35b8f.js",
-  "/_app/immutable/chunks/singletons-f9bb119b.js",
-  "/_app/immutable/chunks/index-abb8a827.js",
-  "/_app/immutable/chunks/index-da9beac9.js",
+  "/_app/immutable/chunks/singletons-6551ea90.js",
+  "/_app/immutable/chunks/index-d0decbdb.js",
+  "/_app/immutable/chunks/index-66f8fb1c.js",
   "/_app/immutable/chunks/preload-helper-b21cceae.js",
-  "/_app/immutable/chunks/_page-3f0ccaf6.js",
-  "/_app/immutable/assets/_page-508a831d.css",
+  "/_app/immutable/chunks/_page-5d5bd967.js",
+  "/_app/immutable/assets/_page-78736a14.css",
   "/_app/immutable/chunks/_page-c82b235a.js",
-  "/_app/immutable/chunks/0-7c27cc7a.js",
-  "/_app/immutable/chunks/1-e062770f.js",
-  "/_app/immutable/chunks/2-9ec100f0.js",
+  "/_app/immutable/chunks/0-b6419a9f.js",
+  "/_app/immutable/chunks/1-ae61bba4.js",
+  "/_app/immutable/chunks/2-0ee937ad.js",
   "/_app/immutable/chunks/html2canvas.esm-fb42d204.js",
-  "/_app/immutable/chunks/purify.es-20117e50.js",
-  "/_app/immutable/chunks/index.es-26d4e7cf.js"
+  "/_app/immutable/chunks/purify.es-88e864ff.js",
+  "/_app/immutable/chunks/index.es-92f64de4.js"
 ], h = [
   "/.nojekyll",
   "/assets/icons/icon-128x128.png",
@@ -33,7 +33,7 @@ const m = [
   "/favicon.png",
   "/manifest.webmanifest",
   "/robots.txt"
-], i = "1667899866913", t = self, o = `cache${i}`, p = m.concat(h), u = new Set(p);
+], i = "1668351780126", t = self, o = `cache${i}`, p = m.concat(h), u = new Set(p);
 t.addEventListener("install", (s) => {
   s.waitUntil(
     caches.open(o).then((e) => e.addAll(p)).then(() => {
