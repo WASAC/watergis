@@ -71,6 +71,7 @@
 </div>
 
 <style lang="scss">
+	@import 'bulma/bulma.sass';
 	@import '$lib/style/fa/css/all.css';
 
 	.logo {
