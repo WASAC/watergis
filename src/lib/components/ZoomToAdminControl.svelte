@@ -146,72 +146,84 @@
 	};
 </script>
 
-<div class="columns">
-	<div class="column is-full p-2">
-		<div class="select is-fullwidth">
-			<select bind:value={selectedProvId}>
-				<option value="">Select province...</option>
-				{#each provinces as feature}
-					<option value={feature.properties.id}>{feature.properties.name}</option>
-				{/each}
-			</select>
-		</div>
-	</div>
+<div class="admin-container">
+	<select class="admin-select" bind:value={selectedProvId}>
+		<option value="">Select province...</option>
+		{#each provinces as feature}
+			<option value={feature.properties.id}>{feature.properties.name}</option>
+		{/each}
+	</select>
+
+	{#if selectedProvId}
+		<select class="admin-select" bind:value={selectedDistId}>
+			<option value="">Select district...</option>
+			{#each districts as feature}
+				<option value={feature.properties.id}>{feature.properties.name}</option>
+			{/each}
+		</select>
+	{/if}
+	{#if selectedProvId && selectedDistId}
+		<select class="admin-select" bind:value={selectedSectId}>
+			<option value="">Select sector...</option>
+			{#each sectors as feature}
+				<option value={feature.properties.id}>{feature.properties.name}</option>
+			{/each}
+		</select>
+	{/if}
+	{#if selectedProvId && selectedDistId && selectedSectId}
+		<select class="admin-select" bind:value={selectedCellId}>
+			<option value="">Select cell...</option>
+			{#each cells as feature}
+				<option value={feature.properties.id}>{feature.properties.name}</option>
+			{/each}
+		</select>
+	{/if}
+	{#if selectedProvId && selectedDistId && selectedSectId && selectedCellId}
+		<select class="admin-select" bind:value={selectedVillId}>
+			<option value="">Select village...</option>
+			{#each villages as feature}
+				<option value={feature.properties.id}>{feature.properties.name}</option>
+			{/each}
+		</select>
+	{/if}
 </div>
 
-{#if selectedProvId}
-	<div class="columns">
-		<div class="column is-full p-2">
-			<div class="select is-fullwidth">
-				<select bind:value={selectedDistId}>
-					<option value="">Select district...</option>
-					{#each districts as feature}
-						<option value={feature.properties.id}>{feature.properties.name}</option>
-					{/each}
-				</select>
-			</div>
-		</div>
-	</div>
-{/if}
-{#if selectedProvId && selectedDistId}
-	<div class="columns">
-		<div class="column is-full p-2">
-			<div class="select is-fullwidth">
-				<select bind:value={selectedSectId}>
-					<option value="">Select sector...</option>
-					{#each sectors as feature}
-						<option value={feature.properties.id}>{feature.properties.name}</option>
-					{/each}
-				</select>
-			</div>
-		</div>
-	</div>
-{/if}
-{#if selectedProvId && selectedDistId && selectedSectId}
-	<div class="columns">
-		<div class="column is-full p-2">
-			<div class="select is-fullwidth">
-				<select bind:value={selectedCellId}>
-					<option value="">Select cell...</option>
-					{#each cells as feature}
-						<option value={feature.properties.id}>{feature.properties.name}</option>
-					{/each}
-				</select>
-			</div>
-		</div>
-	</div>
-{/if}
-{#if selectedProvId && selectedDistId && selectedSectId && selectedCellId}
-	<div class="columns">
-		<div class="column is-full p-2">
-			<div class="select is-fullwidth">
-				<select bind:value={selectedVillId}>
-					<option value="">Select village...</option>
-					{#each villages as feature}
-						<option value={feature.properties.id}>{feature.properties.name}</option>
-					{/each}
-				</select>
-			</div>
-		</div>
-	</div>
-{/if}
+<style lang="scss">
+	.admin-container {
+		display: flex;
+		flex-direction: column;
+
+		.admin-select {
+			cursor: pointer;
+			width: 100%;
+			height: 40px;
+			font-size: 1em;
+			padding: 10px;
+			margin-bottom: 0.5rem;
+		}
+
+		select {
+			width: 100%;
+			border-radius: 4px;
+			border-color: #485fc7;
+			box-sizing: border-box;
+			background: transparent;
+			-webkit-appearance: none;
+			cursor: pointer;
+			background: #fff
+				url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2211%22%20height%3D%2211%22%20viewBox%3D%220%200%2011%2011%22%3E%3Cpath%20d%3D%22M4.33%208.5L0%201L8.66%201z%22%20fill%3D%22%23666%22%2F%3E%3C%2Fsvg%3E')
+				right 10px center no-repeat;
+			padding: 12px 35px 12px 11px;
+			color: #000;
+
+			/* Firefox hide arrow */
+			-moz-appearance: none;
+			text-indent: 0.01px;
+			text-overflow: '';
+		}
+		/* IE10 hide arrow */
+		select::-ms-expand {
+			display: none;
+		}
+	}
+</style>
