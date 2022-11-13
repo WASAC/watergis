@@ -6,13 +6,32 @@
 
 {#if isSearchTabVisible}
 	{#if config.adminBoundary}
-		<div class="card">
-			<div class="card-content">
-				<p class="title is-6">Zoom to admin</p>
-			</div>
-			<div class="content mx-4 mb-4">
+		<div class="search-panel">
+			<div class="panel-title">Zoom to admin</div>
+			<div class="panel-contents">
 				<ZoomToAdminControl />
 			</div>
 		</div>
 	{/if}
 {/if}
+
+<style lang="scss">
+	.search-panel {
+		display: flex;
+		flex-direction: column;
+		margin: 0.5rem;
+
+		.panel-title {
+			font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial,
+				sans-serif;
+			font-size: 20px;
+			font-weight: 600;
+			margin-left: 0.5rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.panel-contents {
+			margin-left: 0.5rem;
+		}
+	}
+</style>
