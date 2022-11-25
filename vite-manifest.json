@@ -1,6 +1,6 @@
 {
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-6fc15bb1.js",
+    "file": "_app/immutable/start-5955f31e.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -32,12 +32,12 @@
     ]
   },
   "src/routes/+page.svelte": {
-    "file": "_app/immutable/components/pages/_page.svelte-1d267848.js",
+    "file": "_app/immutable/components/pages/_page.svelte-7f9fcfbb.js",
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
       "_index-73d65c13.js",
-      "__page-80d049a5.js"
+      "__page-5dc3b099.js"
     ]
   },
   "src/routes/+page.ts": {
@@ -66,8 +66,8 @@
   "_preload-helper-9b728935.js": {
     "file": "_app/immutable/chunks/preload-helper-9b728935.js"
   },
-  "__page-80d049a5.js": {
-    "file": "_app/immutable/chunks/_page-80d049a5.js",
+  "__page-5dc3b099.js": {
+    "file": "_app/immutable/chunks/_page-5dc3b099.js",
     "imports": [
       "_index-73d65c13.js",
       "_index-aae2ee95.js",
@@ -79,7 +79,7 @@
       "node_modules/canvg/lib/index.es.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-1eac4dcd.css"
+      "_app/immutable/assets/_page-19361c91.css"
     ]
   },
   "__page-c82b235a.js": {
@@ -102,12 +102,12 @@
     ]
   },
   ".svelte-kit/generated/nodes/2.js": {
-    "file": "_app/immutable/chunks/2-948245ab.js",
+    "file": "_app/immutable/chunks/2-2ed97015.js",
     "src": ".svelte-kit/generated/nodes/2.js",
     "isDynamicEntry": true,
     "imports": [
       "__page-c82b235a.js",
-      "__page-80d049a5.js"
+      "__page-5dc3b099.js"
     ]
   },
   "node_modules/html2canvas/dist/html2canvas.esm.js": {
@@ -121,15 +121,15 @@
     "isDynamicEntry": true
   },
   "node_modules/canvg/lib/index.es.js": {
-    "file": "_app/immutable/chunks/index.es-b1af496f.js",
+    "file": "_app/immutable/chunks/index.es-4c4754a3.js",
     "src": "node_modules/canvg/lib/index.es.js",
     "isDynamicEntry": true,
     "imports": [
-      "__page-80d049a5.js"
+      "__page-5dc3b099.js"
     ]
   },
   "_page.css": {
-    "file": "_app/immutable/assets/_page-1eac4dcd.css",
+    "file": "_app/immutable/assets/_page-19361c91.css",
     "src": "_page.css"
   }
 }
