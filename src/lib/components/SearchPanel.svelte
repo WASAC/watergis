@@ -1,18 +1,15 @@
 <script lang="ts">
 	import { config } from '$config';
 	import ZoomToAdminControl from './ZoomToAdminControl.svelte';
-	export let isSearchTabVisible = false;
 </script>
 
-{#if isSearchTabVisible}
-	{#if config.adminBoundary}
-		<div class="search-panel">
-			<div class="panel-title">Zoom to admin</div>
-			<div class="panel-contents">
-				<ZoomToAdminControl />
-			</div>
+{#if config.adminBoundary}
+	<div class="search-panel">
+		<div class="panel-title">Zoom to admin</div>
+		<div class="panel-contents">
+			<ZoomToAdminControl />
 		</div>
-	{/if}
+	</div>
 {/if}
 
 <style lang="scss">

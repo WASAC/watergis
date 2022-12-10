@@ -73,9 +73,15 @@
 			</ul>
 		</div>
 	</div>
-	<LayerListPanel {isLayersTabVisible} />
-	<SearchPanel {isSearchTabVisible} />
-	<AdvancedPanel {isAdvancedTabVisible} />
+	<div hidden={activeTab.label !== TabNames.LAYERS}>
+		<LayerListPanel />
+	</div>
+	<div hidden={activeTab.label !== TabNames.SEARCH}>
+		<SearchPanel />
+	</div>
+	<div hidden={activeTab.label !== TabNames.ADVANCED}>
+		<AdvancedPanel />
+	</div>
 </div>
 
 <style lang="scss">
