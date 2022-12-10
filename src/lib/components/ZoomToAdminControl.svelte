@@ -3,6 +3,8 @@
 	import { config } from '../../config';
 	import { map } from '$lib/stores';
 
+	const layerId = 'selected-boundary';
+
 	let selectedProvId: string;
 	let selectedDistId: string;
 	let selectedSectId: string;
@@ -29,6 +31,8 @@
 			case 'province':
 				if (selectedProvId) {
 					geojson = provinces.filter((admin) => admin.properties.id === Number(selectedProvId))[0];
+				} else {
+					clearBoundary();
 				}
 				break;
 			case 'district':
@@ -115,7 +119,7 @@
 
 	const zoomToBoundary = (geojson) => {
 		if (!geojson) return;
-		const layerId = 'selected-boundary';
+
 		if ('bbox' in geojson) {
 			$map.fitBounds(geojson.bbox);
 		}
@@ -142,6 +146,15 @@
 			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			$map.getSource(layerId).setData(data);
+		}
+	};
+
+	const clearBoundary = () => {
+		if ($map?.getLayer(layerId)) {
+			$map.removeLayer(layerId);
+		}
+		if ($map?.getSource(layerId)) {
+			$map.removeSource(layerId);
 		}
 	};
 </script>
