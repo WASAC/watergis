@@ -39,7 +39,8 @@ export const config: Config = {
 		},
 		place_type: ['wss'],
 		placeholder: 'Search WSS/PO/District',
-		zoom: 13
+		zoom: 13,
+		maxItems: 50
 	},
 	// please specify layers' name for showing popup with attributes table.
 	popup: {
