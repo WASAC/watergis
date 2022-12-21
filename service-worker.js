@@ -1,23 +1,23 @@
 const m = [
   "/_app/immutable/assets/_page-7666906e.css",
-  "/_app/immutable/chunks/index-5cbadba0.js",
-  "/_app/immutable/chunks/index-189e0129.js",
-  "/_app/immutable/chunks/0-8c3f9aed.js",
-  "/_app/immutable/chunks/_page-7e4796dc.js",
-  "/_app/immutable/start-627ac8f4.js",
-  "/_app/immutable/chunks/2-7863e39c.js",
+  "/_app/immutable/chunks/1-1645957b.js",
+  "/_app/immutable/chunks/2-c947593c.js",
+  "/_app/immutable/chunks/index-64cdc264.js",
+  "/_app/immutable/chunks/0-2b57a016.js",
+  "/_app/immutable/components/layout.svelte-e1430799.js",
+  "/_app/immutable/chunks/index-95d721c5.js",
+  "/_app/immutable/components/pages/_page.svelte-9bb2e75b.js",
   "/_app/immutable/modules/pages/_page.ts-6a8cdd0a.js",
-  "/_app/immutable/components/layout.svelte-e9f0b961.js",
-  "/_app/immutable/components/error.svelte-8498ad8d.js",
-  "/_app/immutable/components/pages/_page.svelte-004196c8.js",
-  "/_app/immutable/chunks/index-af4b29fc.js",
-  "/_app/immutable/chunks/1-9724a59d.js",
-  "/_app/immutable/chunks/singletons-f31f1661.js",
+  "/_app/immutable/chunks/purify.es-075a2866.js",
+  "/_app/immutable/chunks/singletons-959c2cd9.js",
+  "/_app/immutable/chunks/index-d03b3bd3.js",
+  "/_app/immutable/start-2614292a.js",
+  "/_app/immutable/components/error.svelte-0668fd26.js",
+  "/_app/immutable/chunks/html2canvas.esm-0a33ed42.js",
   "/_app/immutable/chunks/preload-helper-41c905a7.js",
-  "/_app/immutable/chunks/purify.es-f1425ba2.js",
-  "/_app/immutable/chunks/html2canvas.esm-c0237c70.js",
-  "/_app/immutable/chunks/index.es-aaff8c12.js",
-  "/_app/immutable/chunks/_page-44ed1064.js"
+  "/_app/immutable/chunks/_page-7e4796dc.js",
+  "/_app/immutable/chunks/index.es-6abcb2ae.js",
+  "/_app/immutable/chunks/_page-3b0c5929.js"
 ], h = [
   "/.nojekyll",
   "/assets/icons/icon-128x128.png",
@@ -33,40 +33,40 @@ const m = [
   "/favicon.png",
   "/manifest.webmanifest",
   "/robots.txt"
-], i = "1671363509910", t = self, o = `cache${i}`, p = m.concat(h), u = new Set(p);
-t.addEventListener("install", (s) => {
+], i = "1671614863687", a = self, o = `cache${i}`, p = m.concat(h), u = new Set(p);
+a.addEventListener("install", (s) => {
   s.waitUntil(
     caches.open(o).then((e) => e.addAll(p)).then(() => {
-      t.skipWaiting();
+      a.skipWaiting();
     })
   );
 });
-t.addEventListener("activate", (s) => {
+a.addEventListener("activate", (s) => {
   s.waitUntil(
     caches.keys().then(async (e) => {
-      for (const a of e)
-        a !== o && await caches.delete(a);
-      t.clients.claim();
+      for (const t of e)
+        t !== o && await caches.delete(t);
+      a.clients.claim();
     })
   );
 });
 async function r(s) {
   const e = await caches.open(`offline${i}`);
   try {
-    const a = await fetch(s);
-    return e.put(s, a.clone()), a;
-  } catch (a) {
+    const t = await fetch(s);
+    return e.put(s, t.clone()), t;
+  } catch (t) {
     const c = await e.match(s);
     if (c)
       return c;
-    throw a;
+    throw t;
   }
 }
-t.addEventListener("fetch", (s) => {
+a.addEventListener("fetch", (s) => {
   if (s.request.method !== "GET" || s.request.headers.has("range"))
     return;
-  const e = new URL(s.request.url), a = e.protocol.startsWith("http"), c = e.hostname === self.location.hostname && e.port !== self.location.port, n = e.host === self.location.host && u.has(e.pathname), l = s.request.cache === "only-if-cached" && !n;
-  a && !c && !l && s.respondWith(
+  const e = new URL(s.request.url), t = e.protocol.startsWith("http"), c = e.hostname === self.location.hostname && e.port !== self.location.port, n = e.host === self.location.host && u.has(e.pathname), l = s.request.cache === "only-if-cached" && !n;
+  t && !c && !l && s.respondWith(
     (async () => n && await caches.match(s.request) || r(s.request))()
   );
 });
