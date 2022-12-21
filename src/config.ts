@@ -30,17 +30,12 @@ export const config: Config = {
 		url: 'https://wasac.github.io/vt/wss.geojson',
 		target: ['wss_name', 'district', 'po_name'],
 		format: (p) => {
-			const label: string[] = [];
-			const targets = ['wss_id', 'wss_name', 'po_name', 'district'];
-			targets.forEach((target) => {
-				if (p[target]) label.push(p[target]);
-			});
-			return label.length > 0 ? label.join(', ') : '';
+			return `${p.wss_id}-${p.wss_name}, ${p.po_name}, ${p.district}`;
 		},
 		place_type: ['wss'],
 		placeholder: 'Search WSS/PO/District',
-		zoom: 13,
-		maxItems: 50
+		limit: 10,
+		zoom: 13
 	},
 	// please specify layers' name for showing popup with attributes table.
 	popup: {
