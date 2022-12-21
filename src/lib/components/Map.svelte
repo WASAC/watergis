@@ -25,12 +25,12 @@
 	let isMapLoaded = false;
 	let isMenuShown = false;
 
-	onMount(async () => {
-		const styleUrlObj = new StyleUrl();
-		const initialStyle = styleUrlObj.getInitialStyle(config.styles);
-		selectedStyle.update(() => initialStyle);
+	const styleUrlObj = new StyleUrl();
+	const initialStyle = styleUrlObj.getInitialStyle(config.styles);
+	selectedStyle.update(() => initialStyle);
 
-		const map2 = new Map({
+	onMount(() => {
+		$map = new Map({
 			container: mapContainer,
 			style: initialStyle.uri,
 			center: config.center,
@@ -38,54 +38,55 @@
 			hash: true,
 			attributionControl: false
 		});
-		map2.addControl(new AttributionControl({ compact: true }), 'bottom-right');
 
-		const centerIconManager = new CenterIconManager(map2);
+		$map.addControl(new AttributionControl({ compact: true }), 'bottom-right');
+
+		$map.addControl(
+			new GeolocateControl({
+				positionOptions: { enableHighAccuracy: true },
+				trackUserLocation: true
+			}),
+			'bottom-right'
+		);
+
+		$map.addControl(
+			new NavigationControl({
+				visualizePitch: true,
+				showZoom: true,
+				showCompass: true
+			}),
+			'bottom-right'
+		);
+
+		if (config.terrain) {
+			$map.setMaxPitch(85);
+			$map.addControl(new TerrainControl(config.terrain), 'bottom-right');
+		}
+
+		if (config.areaSwitcher) {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-ignore
+			$map.addControl(new MapboxAreaSwitcherControl(config.areaSwitcher.areas), 'bottom-right');
+		}
+
+		$map.addControl(
+			new FullscreenControl({ container: document.querySelector('body') }),
+			'bottom-right'
+		);
+
+		$map.addControl(new ScaleControl({ maxWidth: 80, unit: 'metric' }), 'bottom-left');
+
+		const centerIconManager = new CenterIconManager($map);
 		centerIconManager.create();
 
-		map2.on('load', () => {
+		$map.on('load', () => {
 			isMapLoaded = true;
-
-			map2.addControl(
-				new NavigationControl({
-					visualizePitch: true,
-					showZoom: true,
-					showCompass: true
-				}),
-				'top-right'
-			);
-
-			map2.addControl(
-				new FullscreenControl({ container: document.querySelector('body') }),
-				'top-right'
-			);
-
-			map2.addControl(
-				new GeolocateControl({
-					positionOptions: { enableHighAccuracy: true },
-					trackUserLocation: true
-				}),
-				'top-right'
-			);
-
-			if (config.terrain) {
-				map2.setMaxPitch(85);
-				map2.addControl(new TerrainControl(config.terrain), 'top-right');
-			}
-
-			map2.addControl(new ScaleControl({ maxWidth: 80, unit: 'metric' }), 'bottom-left');
-
-			if (config.areaSwitcher) {
-				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-				// @ts-ignore
-				map2.addControl(new MapboxAreaSwitcherControl(config.areaSwitcher.areas), 'top-right');
-			}
 		});
 
 		//set feature-state for WSS
 		let hoverLayers = ['wss', 'pipeline', 'watersource'];
 		let hoveredWssId;
-		map2.on('mousemove', 'wss', function (e) {
+		$map.on('mousemove', 'wss', function (e) {
 			if (e.features.length > 0) {
 				if (hoveredWssId) {
 					hoverLayers.forEach((layer) => {
@@ -104,7 +105,7 @@
 				});
 			}
 		});
-		map2.on('mouseleave', 'wss', function () {
+		$map.on('mouseleave', 'wss', function () {
 			if (hoveredWssId) {
 				hoverLayers.forEach((layer) => {
 					$map.setFeatureState(
@@ -115,8 +116,6 @@
 			}
 			hoveredWssId = null;
 		});
-
-		map.update(() => map2);
 	});
 
 	let customiseUrl = (url: string): string => {
@@ -132,19 +131,17 @@
 	</div>
 	<div slot="secondary">
 		<div class="map" id="map" bind:this={mapContainer} />
-		{#if isMapLoaded}
-			{#if config.search}
-				<SearchControl bind:map={$map} bind:searchOption={config.search} position="top-left" />
-			{/if}
-			<ShareURLControl bind:map={$map} bind:customiseUrl position="top-right" />
-			<MapExportControl
-				bind:map={$map}
-				showPrintableArea={true}
-				showCrosshair={true}
-				position="top-right"
-			/>
-			<AttributePopupControl bind:map={$map} bind:targetLayers={config.popup.target} />
+		{#if isMapLoaded && config.search}
+			<SearchControl bind:map={$map} bind:searchOption={config.search} position="top-left" />
 		{/if}
+		<AttributePopupControl bind:map={$map} bind:targetLayers={config.popup.target} />
+		<ShareURLControl bind:map={$map} bind:customiseUrl position="top-right" />
+		<MapExportControl
+			bind:map={$map}
+			showPrintableArea={true}
+			showCrosshair={true}
+			position="top-right"
+		/>
 	</div>
 </MenuControl>
 
