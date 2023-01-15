@@ -27,27 +27,6 @@
 		}
 	];
 	let activeTab = tabs[0];
-	let isLayersTabVisible = false;
-	let isSearchTabVisible = false;
-	let isAdvancedTabVisible = false;
-
-	$: activeTab, changeActiveTab();
-	const changeActiveTab = () => {
-		isLayersTabVisible = false;
-		isSearchTabVisible = false;
-		isAdvancedTabVisible = false;
-		switch (activeTab.label) {
-			case TabNames.LAYERS:
-				isLayersTabVisible = true;
-				break;
-			case TabNames.SEARCH:
-				isSearchTabVisible = true;
-				break;
-			case TabNames.ADVANCED:
-				isAdvancedTabVisible = true;
-				break;
-		}
-	};
 </script>
 
 <div class="drawer-content">
