@@ -48,18 +48,12 @@
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<meta http-equiv="content-security-policy" content="">
-		<link rel="modulepreload" href="./_app/immutable/start-3be02eab.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-75416758.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons-45e56a3f.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index-0f63c3d9.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper-41c905a7.js">
-		<script>
-			if ('serviceWorker' in navigator) {
-				addEventListener('load', function () {
-					navigator.serviceWorker.register('./service-worker.js');
-				});
-			}
-		</script>
+		<link rel="modulepreload" href="./_app/immutable/entry/start.b33158ad.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.e3feca37.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.1a2bdb8d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.244686b5.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.9c0ea052.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.41c905a7.js">
 	</head>
 	<style type="text/css">
 		html,
@@ -78,15 +72,28 @@
 	</style>
 	<body>
 		<div>
-		<script type="module" data-sveltekit-hydrate="45h">
-			import { start } from "./_app/immutable/start-3be02eab.js";
+			<script>
+				{
+					__sveltekit_138b1o1 = {
+						env: {},
+						base: new URL(".", location).pathname.slice(0, -1),
+						element: document.currentScript.parentElement
+					};
 
-			start({
-				assets: "",
-				env: {},
-				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
-				version: "1676886511863"
-			});
-		</script></div>
+					Promise.all([
+						import("./_app/immutable/entry/start.b33158ad.js"),
+						import("./_app/immutable/entry/app.9c0ea052.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_138b1o1.element);
+					});
+
+					if ('serviceWorker' in navigator) {
+						addEventListener('load', function () {
+							navigator.serviceWorker.register('./service-worker.js');
+						});
+					}
+				}
+			</script>
+		</div>
 	</body>
 </html>
