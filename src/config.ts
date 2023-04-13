@@ -57,7 +57,18 @@ export const config: Config = {
 			'watersource',
 			'pipeline',
 			'wss',
-			'pg-building'
+			'pg-building',
+			'uwss-customers',
+			'uwss-fire-hydrant',
+			'uwss-manhole',
+			'uwss_pipeline_annotation',
+			'uwss_pipeline',
+			'uwss-pumping-station',
+			'uwss-reservoir',
+			'uwss-valve',
+			'uwss-water-meter',
+			'uwss-water-treatment-plant',
+			'uwss-watersource'
 		]
 	},
 	// please specify your covered area if you have multipul locations to do waterworks
@@ -103,7 +114,18 @@ export const config: Config = {
 			parcels_annotation: 'Parcels Label',
 			'contour-line': 'Countour',
 			'contour-label': 'Contour Label',
-			hillshade: 'Hillshade'
+			hillshade: 'Hillshade',
+			'uwss-customers': 'Customers (Urban)',
+			'uwss-fire-hydrant': 'Fire hydrant (Urban)',
+			'uwss-manhole': 'Manhole (Urban)',
+			uwss_pipeline_annotation: 'Pipeline Label (Urban)',
+			uwss_pipeline: 'Pipeline (Urban)',
+			'uwss-pumping-station': 'Pump (Urban)',
+			'uwss-reservoir': 'Reservoir (Urban)',
+			'uwss-valve': 'Valve (Urban)',
+			'uwss-water-meter': 'Water meter (Urban)',
+			'uwss-water-treatment-plant': 'Water treatment plant (Urban)',
+			'uwss-watersource': 'Water source (Urban)'
 		}
 	},
 	elevation: {
