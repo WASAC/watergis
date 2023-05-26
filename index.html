@@ -48,11 +48,11 @@
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<meta http-equiv="content-security-policy" content="">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.78e095da.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.e3feca37.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.0e1d3970.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.244686b5.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.a41acefc.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.a14d8836.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.331c9040.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.c1946ada.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.7e27822a.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.610093fe.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.41c905a7.js">
 	</head>
 	<style type="text/css">
@@ -74,17 +74,18 @@
 		<div>
 			<script>
 				{
-					__sveltekit_11w7xa0 = {
-						env: {},
+					__sveltekit_bsichq = {
 						base: new URL(".", location).pathname.slice(0, -1),
-						element: document.currentScript.parentElement
+						env: {}
 					};
 
+					const element = document.currentScript.parentElement;
+
 					Promise.all([
-						import("./_app/immutable/entry/start.78e095da.js"),
-						import("./_app/immutable/entry/app.a41acefc.js")
+						import("./_app/immutable/entry/start.a14d8836.js"),
+						import("./_app/immutable/entry/app.610093fe.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_11w7xa0.element);
+						kit.start(app, element);
 					});
 
 					if ('serviceWorker' in navigator) {

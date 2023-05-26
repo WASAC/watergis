@@ -1,25 +1,20 @@
-const s = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), m = [
-  s + "/_app/immutable/entry/app.a41acefc.js",
-  s + "/_app/immutable/chunks/0.ddfc3e45.js",
-  s + "/_app/immutable/chunks/1.fd1392eb.js",
-  s + "/_app/immutable/chunks/2.3c68994d.js",
-  s + "/_app/immutable/chunks/_page.7e4796dc.js",
-  s + "/_app/immutable/chunks/_page.b65f294d.js",
-  s + "/_app/immutable/assets/_page.4674283d.css",
-  s + "/_app/immutable/chunks/index.244686b5.js",
-  s + "/_app/immutable/chunks/index.95d721c5.js",
-  s + "/_app/immutable/chunks/index.e3feca37.js",
+const s = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), r = [
+  s + "/_app/immutable/entry/app.610093fe.js",
+  s + "/_app/immutable/nodes/0.706caf88.js",
+  s + "/_app/immutable/nodes/1.f1b944c2.js",
+  s + "/_app/immutable/nodes/2.c487d00b.js",
+  s + "/_app/immutable/assets/2.04c78307.css",
+  s + "/_app/immutable/chunks/2.101d15e1.js",
+  s + "/_app/immutable/chunks/index.331c9040.js",
+  s + "/_app/immutable/chunks/index.7b3c2e77.js",
+  s + "/_app/immutable/chunks/index.7e27822a.js",
   s + "/_app/immutable/chunks/preload-helper.41c905a7.js",
-  s + "/_app/immutable/chunks/singletons.0e1d3970.js",
-  s + "/_app/immutable/entry/start.78e095da.js",
-  s + "/_app/immutable/entry/error.svelte.06f9492d.js",
-  s + "/_app/immutable/entry/layout.svelte.7fbc008e.js",
-  s + "/_app/immutable/chunks/index.es.5cff4d3c.js",
-  s + "/_app/immutable/chunks/purify.es.9f923ed6.js",
-  s + "/_app/immutable/chunks/html2canvas.esm.0a33ed42.js",
-  s + "/_app/immutable/entry/_page.svelte.f72757d6.js",
-  s + "/_app/immutable/entry/_page.ts.abce3f11.js"
-], r = [
+  s + "/_app/immutable/chunks/singletons.c1946ada.js",
+  s + "/_app/immutable/entry/start.a14d8836.js",
+  s + "/_app/immutable/chunks/index.es.8030cff7.js",
+  s + "/_app/immutable/chunks/purify.es.f47f2ec0.js",
+  s + "/_app/immutable/chunks/html2canvas.esm.e0a7d97b.js"
+], m = [
   s + "/.nojekyll",
   s + "/assets/icons/icon-128x128.png",
   s + "/assets/icons/icon-144x144.png",
@@ -34,10 +29,10 @@ const s = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), m
   s + "/favicon.png",
   s + "/manifest.webmanifest",
   s + "/robots.txt"
-], o = "1681358094990", n = self, p = `cache${o}`, l = m.concat(r), u = new Set(l);
+], o = "1685080313822", n = self, p = `cache${o}`, h = r.concat(m), u = new Set(h);
 n.addEventListener("install", (e) => {
   e.waitUntil(
-    caches.open(p).then((t) => t.addAll(l)).then(() => {
+    caches.open(p).then((t) => t.addAll(h)).then(() => {
       n.skipWaiting();
     })
   );
@@ -66,8 +61,8 @@ async function d(e) {
 n.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET" || e.request.headers.has("range"))
     return;
-  const t = new URL(e.request.url), a = t.protocol.startsWith("http"), c = t.hostname === self.location.hostname && t.port !== self.location.port, i = t.host === self.location.host && u.has(t.pathname), h = e.request.cache === "only-if-cached" && !i;
-  a && !c && !h && e.respondWith(
+  const t = new URL(e.request.url), a = t.protocol.startsWith("http"), c = t.hostname === self.location.hostname && t.port !== self.location.port, i = t.host === self.location.host && u.has(t.pathname), l = e.request.cache === "only-if-cached" && !i;
+  a && !c && !l && e.respondWith(
     (async () => i && await caches.match(e.request) || d(e.request))()
   );
 });
