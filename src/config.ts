@@ -187,6 +187,10 @@ export const config: Config = {
 		source: 'rwanda-dem',
 		exaggeration: 1
 	},
+	attributeTable: {
+		rowsPerPage: 25,
+		minZoom: 14
+	},
 	adminBoundary: {
 		url: 'https://wasac.github.io/rw-admin-boundary'
 	}
