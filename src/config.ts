@@ -188,7 +188,7 @@ export const config: Config = {
 		exaggeration: 1
 	},
 	attributeTable: {
-		rowsPerPage: 25,
+		rowsPerPage: 50,
 		minZoom: 14
 	},
 	adminBoundary: {
