@@ -1,17 +1,17 @@
 const s = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), r = [
-  s + "/_app/immutable/entry/app.827d4362.js",
+  s + "/_app/immutable/entry/app.fb6932c5.js",
   s + "/_app/immutable/nodes/0.b105fabc.js",
-  s + "/_app/immutable/nodes/1.4414d170.js",
-  s + "/_app/immutable/nodes/2.4945875f.js",
-  s + "/_app/immutable/assets/2.878ea498.css",
-  s + "/_app/immutable/chunks/2.3be9de40.js",
-  s + "/_app/immutable/chunks/index.052ccad9.js",
+  s + "/_app/immutable/nodes/1.4f3f046c.js",
+  s + "/_app/immutable/nodes/2.a309671c.js",
+  s + "/_app/immutable/assets/2.9e1b612f.css",
+  s + "/_app/immutable/chunks/2.b1c5e644.js",
   s + "/_app/immutable/chunks/index.660b3be1.js",
   s + "/_app/immutable/chunks/index.89884ee4.js",
+  s + "/_app/immutable/chunks/index.8f99ea77.js",
   s + "/_app/immutable/chunks/preload-helper.41c905a7.js",
-  s + "/_app/immutable/chunks/singletons.626df735.js",
-  s + "/_app/immutable/entry/start.2bea4c00.js",
-  s + "/_app/immutable/chunks/index.es.2394be83.js",
+  s + "/_app/immutable/chunks/singletons.3785efd7.js",
+  s + "/_app/immutable/entry/start.157bf2ab.js",
+  s + "/_app/immutable/chunks/index.es.bd01865e.js",
   s + "/_app/immutable/chunks/purify.es.f47f2ec0.js",
   s + "/_app/immutable/chunks/html2canvas.esm.e0a7d97b.js"
 ], m = [
@@ -29,7 +29,7 @@ const s = /* @__PURE__ */ location.pathname.split("/").slice(0, -1).join("/"), r
   s + "/favicon.png",
   s + "/manifest.webmanifest",
   s + "/robots.txt"
-], o = "1685500504147", n = self, p = `cache${o}`, h = r.concat(m), u = new Set(h);
+], o = "1686558989367", n = self, p = `cache${o}`, h = r.concat(m), u = new Set(h);
 n.addEventListener("install", (e) => {
   e.waitUntil(
     caches.open(p).then((t) => t.addAll(h)).then(() => {
@@ -46,7 +46,7 @@ n.addEventListener("activate", (e) => {
     })
   );
 });
-async function d(e) {
+async function f(e) {
   const t = await caches.open(`offline${o}`);
   try {
     const a = await fetch(e);
@@ -63,6 +63,6 @@ n.addEventListener("fetch", (e) => {
     return;
   const t = new URL(e.request.url), a = t.protocol.startsWith("http"), c = t.hostname === self.location.hostname && t.port !== self.location.port, i = t.host === self.location.host && u.has(t.pathname), l = e.request.cache === "only-if-cached" && !i;
   a && !c && !l && e.respondWith(
-    (async () => i && await caches.match(e.request) || d(e.request))()
+    (async () => i && await caches.match(e.request) || f(e.request))()
   );
 });
