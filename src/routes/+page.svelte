@@ -15,14 +15,14 @@
 </script>
 
 <sveltekit:head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170080825-3"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-872N8T6TQJ"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
-		gtag('config', 'UA-170080825-3');
+		gtag('config', 'G-872N8T6TQJ');
 	</script>
 </sveltekit:head>
 
