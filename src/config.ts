@@ -68,7 +68,15 @@ export const config: Config = {
 			'uwss-valve',
 			'uwss-water-meter',
 			'uwss-water-treatment-plant',
-			'uwss-watersource'
+			'uwss-watersource',
+			'ecd',
+			'ecd_point',
+			'health_facility',
+			'health_facility_point',
+			'school',
+			'school_point',
+			'office',
+			'office_point'
 		]
 	},
 	// please specify your covered area if you have multipul locations to do waterworks
@@ -125,7 +133,19 @@ export const config: Config = {
 			'uwss-valve': 'Valve (Urban)',
 			'uwss-water-meter': 'Water meter (Urban)',
 			'uwss-water-treatment-plant': 'Water treatment plant (Urban)',
-			'uwss-watersource': 'Water source (Urban)'
+			'uwss-watersource': 'Water source (Urban)',
+			ecd: 'Early Children Development Center (building)',
+			ecd_point: 'Early Children Development Center',
+			ecd_point_anotation: 'Early Children Development Center (label)',
+			health_facility: 'Health facility (building)',
+			health_facility_point: 'Health facility',
+			health_facility_point_anotation: 'Health facility (label)',
+			school: 'School (building)',
+			school_point: 'School',
+			school_point_anotation: 'School (label)',
+			office: 'Office (building)',
+			office_point: 'Office',
+			office_point_anotation: 'Office (label)'
 		}
 	},
 	elevation: {
