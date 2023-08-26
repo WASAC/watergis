@@ -69,13 +69,9 @@ export const config: Config = {
 			'uwss-water-meter',
 			'uwss-water-treatment-plant',
 			'uwss-watersource',
-			'ecd',
 			'ecd_point',
-			'health_facility',
 			'health_facility_point',
-			'school',
 			'school_point',
-			'office',
 			'office_point'
 		]
 	},
