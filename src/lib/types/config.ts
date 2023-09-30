@@ -1,9 +1,10 @@
 import type { LngLatLike, TerrainSpecification } from 'maplibre-gl';
-import type { StyleSwitcherOption } from '@watergis/svelte-maplibre-style-switcher/package';
+import type { StyleSwitcherOption } from '@watergis/svelte-maplibre-style-switcher';
 import type {
 	ValhallaIsochroneOptions,
 	ValhallaRoutingOptions
-} from '@watergis/svelte-maplibre-valhalla/package';
+} from '@watergis/svelte-maplibre-valhalla';
+import type { TourGuideOptions, MaplibreTourControlOptions } from '@watergis/maplibre-gl-tour';
 
 export type Config = {
 	title: string;
@@ -60,5 +61,9 @@ export type Config = {
 	};
 	adminBoundary?: {
 		url: string;
+	};
+	tour?: {
+		tourGuideOptions: TourGuideOptions;
+		tourControlOptions: MaplibreTourControlOptions;
 	};
 };

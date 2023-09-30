@@ -1,8 +1,10 @@
 <script lang="ts">
-	import LayerListPanel from './LayerListPanel.svelte';
-	import AdvancedPanel from './AdvancedPanel.svelte';
-	import SearchPanel from './SearchPanel.svelte';
 	import { config } from '$config';
+	import { setContext } from 'svelte';
+	import { writable } from 'svelte/store';
+	import AdvancedPanel from './AdvancedPanel.svelte';
+	import LayerListPanel from './LayerListPanel.svelte';
+	import SearchPanel from './SearchPanel.svelte';
 
 	enum TabNames {
 		LAYERS = 'Layers',
@@ -25,14 +27,18 @@
 		}
 	];
 	let activeTab = tabs[0];
+
+	let tabHeight = writable<number>(0);
+
+	setContext('tab-height', tabHeight);
 </script>
 
 <div class="drawer-content">
-	<div class="header">
+	<div class="header" bind:clientHeight={$tabHeight}>
 		<a class="icon logo" href={config.url}>
 			<img src={config.logo} alt="logo" />
 		</a>
-		<div class="tabs is-centered is-small">
+		<div class="tabs is-centered is-small mb-0">
 			<ul>
 				{#each tabs as tab}
 					<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
