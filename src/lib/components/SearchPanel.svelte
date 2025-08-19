@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { config } from '$config';
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
+	import { config } from '../../config';
 	import ZoomToAdminControl from './ZoomToAdminControl.svelte';
 
-	let windowHeight: number;
+	let windowHeight: number = $state(0);
 	let tabHeight: Writable<number> = getContext('tab-height');
 
-	$: contentHeight = windowHeight - $tabHeight - 20;
+	let contentHeight = $derived(windowHeight - $tabHeight - 20);
 </script>
 
 <svelte:window bind:innerHeight={windowHeight} />

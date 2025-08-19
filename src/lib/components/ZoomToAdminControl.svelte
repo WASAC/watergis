@@ -1,27 +1,22 @@
 <script lang="ts">
-	import type { GeoJSONFeature } from 'maplibre-gl';
-	import { config } from '../../config';
 	import { map } from '$lib/stores';
+	import type { GeoJSONFeature } from 'maplibre-gl';
+	import { onMount } from 'svelte';
+	import { config } from '../../config';
 
 	const layerId = 'selected-boundary';
 
-	let selectedProvId: string;
-	let selectedDistId: string;
-	let selectedSectId: string;
-	let selectedCellId: string;
-	let selectedVillId: string;
+	let selectedProvId: string = $state('');
+	let selectedDistId: string = $state('');
+	let selectedSectId: string = $state('');
+	let selectedCellId: string = $state('');
+	let selectedVillId: string = $state('');
 
-	let provinces: GeoJSONFeature[] = [];
-	let districts: GeoJSONFeature[] = [];
-	let sectors: GeoJSONFeature[] = [];
-	let cells: GeoJSONFeature[] = [];
-	let villages: GeoJSONFeature[] = [];
-
-	$: selectedProvId, onAdminChanged('province');
-	$: selectedDistId, onAdminChanged('district');
-	$: selectedSectId, onAdminChanged('sector');
-	$: selectedCellId, onAdminChanged('cell');
-	$: selectedVillId, onAdminChanged('village');
+	let provinces: GeoJSONFeature[] = $state([]);
+	let districts: GeoJSONFeature[] = $state([]);
+	let sectors: GeoJSONFeature[] = $state([]);
+	let cells: GeoJSONFeature[] = $state([]);
+	let villages: GeoJSONFeature[] = $state([]);
 
 	const onAdminChanged = async (
 		adminType?: 'province' | 'district' | 'sector' | 'cell' | 'village'
@@ -157,44 +152,78 @@
 			$map.removeSource(layerId);
 		}
 	};
+
+	onMount(() => {
+		onAdminChanged('province');
+	});
 </script>
 
 <div class="admin-container">
-	<select class="admin-select" bind:value={selectedProvId}>
+	<select
+		class="admin-select"
+		bind:value={selectedProvId}
+		onchange={() => {
+			onAdminChanged('province');
+		}}
+	>
 		<option value="">Select province...</option>
-		{#each provinces as feature}
+		{#each provinces as feature (feature.properties.id)}
 			<option value={feature.properties.id}>{feature.properties.name}</option>
 		{/each}
 	</select>
 
 	{#if selectedProvId}
-		<select class="admin-select" bind:value={selectedDistId}>
+		<select
+			class="admin-select"
+			bind:value={selectedDistId}
+			onchange={() => {
+				onAdminChanged('district');
+			}}
+		>
 			<option value="">Select district...</option>
-			{#each districts as feature}
+			{#each districts as feature (feature.properties.id)}
 				<option value={feature.properties.id}>{feature.properties.name}</option>
 			{/each}
 		</select>
 	{/if}
 	{#if selectedProvId && selectedDistId}
-		<select class="admin-select" bind:value={selectedSectId}>
+		<select
+			class="admin-select"
+			bind:value={selectedSectId}
+			onchange={() => {
+				onAdminChanged('sector');
+			}}
+		>
 			<option value="">Select sector...</option>
-			{#each sectors as feature}
+			{#each sectors as feature (feature.properties.id)}
 				<option value={feature.properties.id}>{feature.properties.name}</option>
 			{/each}
 		</select>
 	{/if}
 	{#if selectedProvId && selectedDistId && selectedSectId}
-		<select class="admin-select" bind:value={selectedCellId}>
+		<select
+			class="admin-select"
+			bind:value={selectedCellId}
+			onchange={() => {
+				onAdminChanged('cell');
+			}}
+		>
 			<option value="">Select cell...</option>
-			{#each cells as feature}
+			{#each cells as feature (feature.properties.id)}
 				<option value={feature.properties.id}>{feature.properties.name}</option>
 			{/each}
 		</select>
 	{/if}
 	{#if selectedProvId && selectedDistId && selectedSectId && selectedCellId}
-		<select class="admin-select" bind:value={selectedVillId}>
+		<select
+			class="admin-select"
+			bind:value={selectedVillId}
+			onchange={() => {
+				onAdminChanged('village');
+			}}
+		>
 			<option value="">Select village...</option>
-			{#each villages as feature}
+			{#each villages as feature (feature.properties.id)}
 				<option value={feature.properties.id}>{feature.properties.name}</option>
 			{/each}
 		</select>
