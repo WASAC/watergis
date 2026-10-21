@@ -47,14 +47,20 @@
 			href="./manifest.webmanifest"
 		/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link href="./_app/immutable/entry/start.DtR__7Bp.js" rel="modulepreload">
+		<link href="./_app/immutable/entry/payload.DSmR2FwN.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/CRzLMJPS.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BtqnC9xw.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/3J7w0HHz.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BiepKKRx.js" rel="modulepreload">
+		<link href="./_app/immutable/entry/app.CAxKmfnH.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/0.d-YDKU8J.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/2.D1xNU2zF.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/DoDcsXb_.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BFtilmZh.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/B5XbjTb1.js" rel="modulepreload">
 		
-		<link rel="modulepreload" href="./_app/immutable/entry/start.BLIgx2ud.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/DBGoq1UU.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/B_nRZ3sa.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/D3cLhqGa.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.BEG4q4wI.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/MYS1S-aZ.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/DsnmJJEf.js">
+		<link href="./_app/immutable/assets/2.Viyh8e3a.css" rel="stylesheet">
 	</head>
 	<style type="text/css">
 		html,
@@ -75,22 +81,28 @@
 		<div>
 			<script>
 				{
-					__sveltekit_r1rrkt = {
-						base: new URL(".", location).pathname.slice(0, -1)
+					__sveltekit_1u2uvtc = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						version: "1792586337657"
 					};
 
 					const element = document.currentScript.parentElement;
 
-					Promise.all([
-						import("./_app/immutable/entry/start.BLIgx2ud.js"),
-						import("./_app/immutable/entry/app.BEG4q4wI.js")
-					]).then(([kit, app]) => {
+					import("./_app/immutable/entry/start.DtR__7Bp.js").then(async (kit) => {
+						kit.init(__sveltekit_1u2uvtc);
+						const app = await import("./_app/immutable/entry/app.CAxKmfnH.js");
 						kit.start(app, element);
 					});
 
 					if ('serviceWorker' in navigator) {
+						const script_url = './service-worker.js';
+						const policy = globalThis?.window?.trustedTypes?.createPolicy(
+							'sveltekit-trusted-url',
+							{ createScriptURL(url) { return url; } }
+						);
+						const sanitised = policy?.createScriptURL(script_url) ?? script_url;
 						addEventListener('load', function () {
-							navigator.serviceWorker.register('./service-worker.js');
+							navigator.serviceWorker.register(sanitised, { type: 'module' });
 						});
 					}
 				}
