@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { map } from '$lib/stores';
+	import { map } from '#lib/stores/index.js';
 	import type { GeoJSONFeature } from 'maplibre-gl';
 	import { onMount } from 'svelte';
 	import { config } from '../../config';
@@ -120,7 +120,7 @@
 		}
 
 		const data = {
-			type: 'FeatureCollection',
+			type: 'FeatureCollection' as const,
 			features: [geojson]
 		};
 

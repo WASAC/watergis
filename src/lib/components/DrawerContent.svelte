@@ -2,14 +2,12 @@
 	import { setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { config } from '../../config';
-	import AdvancedPanel from './AdvancedPanel.svelte';
 	import LayerListPanel from './LayerListPanel.svelte';
 	import SearchPanel from './SearchPanel.svelte';
 
 	enum TabNames {
 		LAYERS = 'Layers',
-		SEARCH = 'Search',
-		ADVANCED = 'Advanced'
+		SEARCH = 'Search'
 	}
 
 	let tabs = [
@@ -20,10 +18,6 @@
 		{
 			icon: 'fa-solid fa-search',
 			label: TabNames.SEARCH
-		},
-		{
-			icon: 'fa-solid fa-chart-simple',
-			label: TabNames.ADVANCED
 		}
 	];
 	let activeTab = $state(tabs[0]);
@@ -35,6 +29,8 @@
 
 <div class="drawer-content">
 	<div class="header" bind:clientHeight={$tabHeight}>
+		<!-- config.url is an external link, so resolve() does not apply -->
+		<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 		<a class="icon logo" href={config.url}>
 			<img src={config.logo} alt="logo" />
 		</a>
@@ -62,9 +58,6 @@
 	</div>
 	<div hidden={activeTab.label !== TabNames.SEARCH}>
 		<SearchPanel />
-	</div>
-	<div hidden={activeTab.label !== TabNames.ADVANCED}>
-		<AdvancedPanel />
 	</div>
 </div>
 
